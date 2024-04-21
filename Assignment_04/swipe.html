@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>JQuery Mobile</title>
+</head>
+<body>
+
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>Pune Institute of Computer Technology</h1>
+        </div>
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Department">Department</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <h3>WELCOME TO PICT PUNE'S PORTAL.</h3>
+        </div>
+
+        <div data-role="content">
+            <p>Swipe left, right, up, or down on the box below:</p>
+            <div id="swipe-box" data-role="content" style="width: 200px; height: 200px; background-color: lightblue; text-align: center;">
+              Swipe me!
+            </div>
+        </div>
+
+        <a href="#" id="changeColorLeft" class="ui-btn">Change Color Left</a>
+        <a href="#" id="changeColorRight" class="ui-btn">Change Color Right</a>
+
+        <div data-role="content">
+            <h4>Departments</h4>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#" id="showCS">Computer Science (CS)</a></li>
+                <li><a href="#" id="showIT">Information Technology (IT)</a></li>
+                <li><a href="#" id="showENTC">Electronics and Telecommunication (ENTC)</a></li>
+                <li><a href="#" id="showECE">Electronics and Communication (ECE)</a></li>
+                <li><a href="#" id="showAI">Artificial Intelligence (AI)</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content" id="departmentInfo">
+            <!-- Department information will be displayed here -->
+        </div>
+
+        <script>
+            // Swipe box event handlers
+            $('#swipe-box').on('swiperight', function () {
+                alert('Swiped right!');
+                $('#swipe-box').css('background-color', 'lightgreen');
+            });
+
+            $('#swipe-box').on('swipeleft', function () {
+                alert('Swiped left!');
+                $('#swipe-box').css('background-color', 'lightcoral');
+            });
+
+            $('#swipe-box').on('swipeup', function () {
+                alert('Swiped up!');
+                $('#swipe-box').css('background-color', 'lightyellow');
+            });
+
+            $('#swipe-box').on('swipedown', function () {
+                alert('Swiped down!');
+                $('#swipe-box').css('background-color', 'lightpink');
+            });
+
+            // Button click event handlers
+            $('#changeColorLeft').on('click', function () {
+                $('#swipe-box').css('background-color', 'lightcoral');
+            });
+
+            $('#changeColorRight').on('click', function () {
+                $('#swipe-box').css('background-color', 'lightgreen');
+            });
+
+            // Department click event handlers
+            $('#showCS').on('click', function () {
+                showDepartmentInfo('Computer Science Department', 'CS department information goes here.');
+            });
+
+            $('#showIT').on('click', function () {
+                showDepartmentInfo('Information Technology Department', 'IT department information goes here.');
+            });
+
+            $('#showENTC').on('click', function () {
+                showDepartmentInfo('Electronics and Telecommunication Department', 'ENTC department information goes here.');
+            });
+
+            $('#showECE').on('click', function () {
+                showDepartmentInfo('Electronics and Communication Department', 'ECE department information goes here.');
+            });
+
+            $('#showAI').on('click', function () {
+                showDepartmentInfo('Artificial Intelligence Department', 'AI department information goes here.');
+            });
+
+            // Function to display department information
+            function showDepartmentInfo(title, content) {
+                $('#departmentInfo').html('<h3>' + title + '</h3><p>' + content + '</p>');
+            }
+        </script>
+
+        <div data-role="content">
+            <h1>Vision</h1>
+            <!-- Vision content -->
+        </div>
+
+        <!-- Other content sections -->
+
+        <div data-role="footer">
+            <h3>Quick Access</h3>
+            <centre>
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#dept">Department</a>
+                <a href="#Contact">Contact</a>
+            </centre>
+        </div>
+
+    </div>
+
+</body>
+</html>
